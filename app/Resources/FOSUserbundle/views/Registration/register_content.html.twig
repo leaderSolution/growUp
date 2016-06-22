@@ -1,0 +1,44 @@
+{% trans_default_domain 'FOSUserBundle' %}
+<div class="form-top">
+    <div class="form-top-left">
+        <h3>Registration</h3>
+        <p></p>
+    </div>
+    <div class="form-top-right">
+        <i class="fa fa-plus"></i>
+    </div>
+</div>
+<div class="form-bottom ">
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'form-goup'}}) }}
+
+
+        <div class="col-xs-6">
+            {{ form_label(form.first_name) }}
+       {{ form_widget(form.first_name) }}
+     </div>
+    <div class="col-xs-6">
+        {{ form_label(form.last_name) }}
+        {{ form_widget(form.last_name) }}
+    </div>
+    <div class="col-xs-6">
+        {{ form_label(form.last_degree) }}
+        {{ form_widget(form.last_degree) }}
+    </div>
+    <div class="col-xs-6">
+        {{ form_label(form.specialty) }}
+        {{ form_widget(form.specialty) }}
+    </div>
+<hr>
+    {{ form_widget(form) }}
+
+<br>
+    <div class=" col-xs-6">
+        {{ form_widget(form.facebook) }}
+    </div>
+
+    <hr>
+    <div>
+        <button type="submit" value="{{ 'registration.submit'|trans }}" class="btn-success btn ">{{ 'registration.submit'|trans }}</button>
+    </div>
+{{ form_end(form) }}
+</div>

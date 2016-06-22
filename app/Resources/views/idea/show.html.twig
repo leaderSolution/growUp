@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Idea</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ idea.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ idea.title }}</td>
+            </tr>
+            <tr>
+                <th>Shortdescription</th>
+                <td>{{ idea.shortDescription }}</td>
+            </tr>
+            <tr>
+                <th>Elaboratedescription</th>
+                <td>{{ idea.elaborateDescription|raw }}</td>
+            </tr>
+            <tr>
+                <th>Createdat</th>
+                <td>{% if idea.createdAt %}{{ idea.createdAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Updatedat</th>
+                <td>{% if idea.updatedAt %}{{ idea.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+{% endblock %}

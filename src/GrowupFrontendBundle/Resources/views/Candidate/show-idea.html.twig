@@ -1,0 +1,33 @@
+{% extends 'GrowupFrontendBundle::base.html.twig' %}
+
+{% block body %}
+<br>
+    <br>
+    <br>
+    <body>
+  <div class="container">
+
+                <h1>{{ idea.title }}</h1>
+      <div class="row"><span class="fa fa-clock-o ">{% if idea.createdAt %}{{ idea.createdAt|date('Y-m-d H:i:s') }}{% endif %}</span>
+      <span class="fa fa-clock-o">{% if idea.updatedAt %}{{ idea.updatedAt|date('Y-m-d H:i:s') }}{% endif %}</span>
+          <span class="fa fa-edit">{{ idea.candidate }}</span>
+
+      </div>
+      <hr>
+           <blockquote>{{ idea.shortDescription }}</blockquote>
+
+                <p>{{ idea.elaborateDescription|raw }}</p>
+      <ul class="pager">
+          <li class="previous">
+              <a href="{{ path('candidate_profile') }}">&larr; Profil</a>
+          </li>
+          <li class="next">
+              <a href="{{ path('edit_idea', {id:idea.id}) }}">Edit &rarr;</a>
+          </li>
+      </ul>
+
+
+</div>
+
+    </body>
+{% endblock %}

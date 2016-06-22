@@ -1,0 +1,37 @@
+
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="editModalLabel">Modal title</h4>
+            </div>
+            {{ form_start(form , {'attr': {'class': 'form-goup'}}) }}
+
+            <div class="modal-body">
+
+                    <div class="form-group">
+                        {{ form_label(form.title) }}
+                        {{ form_widget(form.title) }}
+
+                    </div>
+                    <div class="form-group">
+                        {{ form_label(form.shortDescription) }}
+                        {{ form_widget(form.shortDescription) }}
+
+                    </div>
+
+
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary">Edit Idea</button>
+            </div>
+            {{ form_end(form) }}
+        </div>
+
+    </div></div>
+
