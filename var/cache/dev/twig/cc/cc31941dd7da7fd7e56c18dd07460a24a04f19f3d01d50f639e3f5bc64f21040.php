@@ -15,8 +15,8 @@ class __TwigTemplate_b4707d348275d4592b585fe9e72995dd667b305b841fe5154e7674887c5
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_c9fd46a5bbe0b93386215e6d2b621392ff94ad288fe9ae80b16cadf208ba525b = $this->env->getExtension("native_profiler");
-        $__internal_c9fd46a5bbe0b93386215e6d2b621392ff94ad288fe9ae80b16cadf208ba525b->enter($__internal_c9fd46a5bbe0b93386215e6d2b621392ff94ad288fe9ae80b16cadf208ba525b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Registration:register_content.html.twig"));
+        $__internal_b8a03d46af73b694f92082df72b7027b60872cf4e1cd12c203e160c916877cc0 = $this->env->getExtension("native_profiler");
+        $__internal_b8a03d46af73b694f92082df72b7027b60872cf4e1cd12c203e160c916877cc0->enter($__internal_b8a03d46af73b694f92082df72b7027b60872cf4e1cd12c203e160c916877cc0_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "FOSUserBundle:Registration:register_content.html.twig"));
 
         // line 2
         echo "<div class=\"form-top\">
@@ -105,7 +105,7 @@ class __TwigTemplate_b4707d348275d4592b585fe9e72995dd667b305b841fe5154e7674887c5
 </div>
 ";
         
-        $__internal_c9fd46a5bbe0b93386215e6d2b621392ff94ad288fe9ae80b16cadf208ba525b->leave($__internal_c9fd46a5bbe0b93386215e6d2b621392ff94ad288fe9ae80b16cadf208ba525b_prof);
+        $__internal_b8a03d46af73b694f92082df72b7027b60872cf4e1cd12c203e160c916877cc0->leave($__internal_b8a03d46af73b694f92082df72b7027b60872cf4e1cd12c203e160c916877cc0_prof);
 
     }
 

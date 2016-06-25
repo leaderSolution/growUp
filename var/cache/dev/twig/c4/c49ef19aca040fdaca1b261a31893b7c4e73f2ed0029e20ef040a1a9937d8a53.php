@@ -15,8 +15,8 @@ class __TwigTemplate_1ee49bfdb2d4bd527a22ad1f6f60391c5acfb3403be44e256ad3a1bbb49
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_b3f751d8b2bda68d7cbf46951442db9abb94307b7383a7590dc8ce2304fd3e05 = $this->env->getExtension("native_profiler");
-        $__internal_b3f751d8b2bda68d7cbf46951442db9abb94307b7383a7590dc8ce2304fd3e05->enter($__internal_b3f751d8b2bda68d7cbf46951442db9abb94307b7383a7590dc8ce2304fd3e05_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "GrowupFrontendBundle:Candidate:_new-idea.html.twig"));
+        $__internal_8b2772d67f0f364663383a777f966b5c2daaec8b619fad8440a2f3d8cb5014cd = $this->env->getExtension("native_profiler");
+        $__internal_8b2772d67f0f364663383a777f966b5c2daaec8b619fad8440a2f3d8cb5014cd->enter($__internal_8b2772d67f0f364663383a777f966b5c2daaec8b619fad8440a2f3d8cb5014cd_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "GrowupFrontendBundle:Candidate:_new-idea.html.twig"));
 
         // line 1
         echo "<div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
@@ -81,7 +81,7 @@ class __TwigTemplate_1ee49bfdb2d4bd527a22ad1f6f60391c5acfb3403be44e256ad3a1bbb49
 
     </div></div>";
         
-        $__internal_b3f751d8b2bda68d7cbf46951442db9abb94307b7383a7590dc8ce2304fd3e05->leave($__internal_b3f751d8b2bda68d7cbf46951442db9abb94307b7383a7590dc8ce2304fd3e05_prof);
+        $__internal_8b2772d67f0f364663383a777f966b5c2daaec8b619fad8440a2f3d8cb5014cd->leave($__internal_8b2772d67f0f364663383a777f966b5c2daaec8b619fad8440a2f3d8cb5014cd_prof);
 
     }
 

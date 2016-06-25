@@ -1,6 +1,6 @@
 <?php
 
-/* @WebProfiler/Profiler/base_js.html.twig */
+/* WebProfilerBundle:Profiler:base_js.html.twig */
 class __TwigTemplate_782a03b5e20b6e6bf3cda01e465b17cfcb3fe74db3a4f8c6173f0f25186239e8 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_782a03b5e20b6e6bf3cda01e465b17cfcb3fe74db3a4f8c6173f0f25186
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_1286d9cb376cf578a40a8515a1b0bafc3d6730ce6184a514a394ebeddfbdec5e = $this->env->getExtension("native_profiler");
-        $__internal_1286d9cb376cf578a40a8515a1b0bafc3d6730ce6184a514a394ebeddfbdec5e->enter($__internal_1286d9cb376cf578a40a8515a1b0bafc3d6730ce6184a514a394ebeddfbdec5e_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Profiler/base_js.html.twig"));
+        $__internal_0237ffea328a48f5d4055f09138fda3729212bfd9a1a3f7eb1c8cc3a449b9a11 = $this->env->getExtension("native_profiler");
+        $__internal_0237ffea328a48f5d4055f09138fda3729212bfd9a1a3f7eb1c8cc3a449b9a11->enter($__internal_0237ffea328a48f5d4055f09138fda3729212bfd9a1a3f7eb1c8cc3a449b9a11_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "WebProfilerBundle:Profiler:base_js.html.twig"));
 
         // line 1
         echo "<script>/*<![CDATA[*/
@@ -474,13 +474,13 @@ class __TwigTemplate_782a03b5e20b6e6bf3cda01e465b17cfcb3fe74db3a4f8c6173f0f25186
 /*]]>*/</script>
 ";
         
-        $__internal_1286d9cb376cf578a40a8515a1b0bafc3d6730ce6184a514a394ebeddfbdec5e->leave($__internal_1286d9cb376cf578a40a8515a1b0bafc3d6730ce6184a514a394ebeddfbdec5e_prof);
+        $__internal_0237ffea328a48f5d4055f09138fda3729212bfd9a1a3f7eb1c8cc3a449b9a11->leave($__internal_0237ffea328a48f5d4055f09138fda3729212bfd9a1a3f7eb1c8cc3a449b9a11_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "@WebProfiler/Profiler/base_js.html.twig";
+        return "WebProfilerBundle:Profiler:base_js.html.twig";
     }
 
     public function isTraitable()

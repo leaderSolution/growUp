@@ -1,6 +1,6 @@
 <?php
 
-/* @Twig/Exception/traces.html.twig */
+/* TwigBundle:Exception:traces.html.twig */
 class __TwigTemplate_a8c5337fd8fe8ffb6d7381598da0a3d3eb2fc7c099b9ad3e74e2bf60d5e5f57e extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_a8c5337fd8fe8ffb6d7381598da0a3d3eb2fc7c099b9ad3e74e2bf60d5e
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_efc9722177b5971b80e68b0135193b42b403ff08bf966e04389c503e850ab540 = $this->env->getExtension("native_profiler");
-        $__internal_efc9722177b5971b80e68b0135193b42b403ff08bf966e04389c503e850ab540->enter($__internal_efc9722177b5971b80e68b0135193b42b403ff08bf966e04389c503e850ab540_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@Twig/Exception/traces.html.twig"));
+        $__internal_39ca63b3433ea17cf79beb6102e11fdc35b9c57984ee2fcb673b0b006974913c = $this->env->getExtension("native_profiler");
+        $__internal_39ca63b3433ea17cf79beb6102e11fdc35b9c57984ee2fcb673b0b006974913c->enter($__internal_39ca63b3433ea17cf79beb6102e11fdc35b9c57984ee2fcb673b0b006974913c_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "TwigBundle:Exception:traces.html.twig"));
 
         // line 1
         echo "<div class=\"block\">
@@ -92,7 +92,7 @@ class __TwigTemplate_a8c5337fd8fe8ffb6d7381598da0a3d3eb2fc7c099b9ad3e74e2bf60d5e
             echo "            <li>
                 ";
             // line 21
-            $this->loadTemplate("@Twig/Exception/trace.html.twig", "@Twig/Exception/traces.html.twig", 21)->display(array("prefix" => (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")), "i" => $context["i"], "trace" => $context["trace"]));
+            $this->loadTemplate("@Twig/Exception/trace.html.twig", "TwigBundle:Exception:traces.html.twig", 21)->display(array("prefix" => (isset($context["position"]) ? $context["position"] : $this->getContext($context, "position")), "i" => $context["i"], "trace" => $context["trace"]));
             // line 22
             echo "            </li>
         ";
@@ -105,13 +105,13 @@ class __TwigTemplate_a8c5337fd8fe8ffb6d7381598da0a3d3eb2fc7c099b9ad3e74e2bf60d5e
 </div>
 ";
         
-        $__internal_efc9722177b5971b80e68b0135193b42b403ff08bf966e04389c503e850ab540->leave($__internal_efc9722177b5971b80e68b0135193b42b403ff08bf966e04389c503e850ab540_prof);
+        $__internal_39ca63b3433ea17cf79beb6102e11fdc35b9c57984ee2fcb673b0b006974913c->leave($__internal_39ca63b3433ea17cf79beb6102e11fdc35b9c57984ee2fcb673b0b006974913c_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "@Twig/Exception/traces.html.twig";
+        return "TwigBundle:Exception:traces.html.twig";
     }
 
     public function isTraitable()

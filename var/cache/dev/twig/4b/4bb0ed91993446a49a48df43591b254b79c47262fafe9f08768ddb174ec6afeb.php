@@ -1,6 +1,6 @@
 <?php
 
-/* @WebProfiler/Collector/exception.css.twig */
+/* WebProfilerBundle:Collector:exception.css.twig */
 class __TwigTemplate_fd0a3e7a3e3c0f67013856f4240bccef1555ed78ac96ac42903cee50e8d7cf2b extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -15,8 +15,8 @@ class __TwigTemplate_fd0a3e7a3e3c0f67013856f4240bccef1555ed78ac96ac42903cee50e8d
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_424a9860835fa7ab2bc0c3c4a20ae6236e66a8fe9517855a69b651a828945852 = $this->env->getExtension("native_profiler");
-        $__internal_424a9860835fa7ab2bc0c3c4a20ae6236e66a8fe9517855a69b651a828945852->enter($__internal_424a9860835fa7ab2bc0c3c4a20ae6236e66a8fe9517855a69b651a828945852_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "@WebProfiler/Collector/exception.css.twig"));
+        $__internal_499f44ec8205e51cfaddf46df011c227c5509b6a8641f8a69d3eb2512f0c14d3 = $this->env->getExtension("native_profiler");
+        $__internal_499f44ec8205e51cfaddf46df011c227c5509b6a8641f8a69d3eb2512f0c14d3->enter($__internal_499f44ec8205e51cfaddf46df011c227c5509b6a8641f8a69d3eb2512f0c14d3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "WebProfilerBundle:Collector:exception.css.twig"));
 
         // line 1
         echo ".sf-reset .traces {
@@ -117,13 +117,13 @@ class __TwigTemplate_fd0a3e7a3e3c0f67013856f4240bccef1555ed78ac96ac42903cee50e8d
 }
 ";
         
-        $__internal_424a9860835fa7ab2bc0c3c4a20ae6236e66a8fe9517855a69b651a828945852->leave($__internal_424a9860835fa7ab2bc0c3c4a20ae6236e66a8fe9517855a69b651a828945852_prof);
+        $__internal_499f44ec8205e51cfaddf46df011c227c5509b6a8641f8a69d3eb2512f0c14d3->leave($__internal_499f44ec8205e51cfaddf46df011c227c5509b6a8641f8a69d3eb2512f0c14d3_prof);
 
     }
 
     public function getTemplateName()
     {
-        return "@WebProfiler/Collector/exception.css.twig";
+        return "WebProfilerBundle:Collector:exception.css.twig";
     }
 
     public function getDebugInfo()
