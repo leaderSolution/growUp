@@ -17,7 +17,7 @@
                 {% image '@GrowupFrontendBundle/Resources/public/images/default_profile.jpg' %}
                 <img src="{% if candidate.profilImage %}{{ asset('uploads/pictures/' ~ candidate.profilImage) }}{% else %}/bundles/growupfrontend/images/default_profile.jpg {% endif %}" alt="Example" class="img-circle img-responsive" width="150px" height="150px"/>
                 {% endimage %}</a>
-            <input type="file" name="avatar" id="avatarUpload" accept="images/*" class="" />
+
         </div>
         <div class="col-sm-10 center-block"><h3>{{ candidate.username }}</h3></div>
 

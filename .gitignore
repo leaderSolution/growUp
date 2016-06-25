@@ -7,8 +7,7 @@
 /app/logs/*
 /build/
 /vendor/
-/bin/
-/composer.phar
+
 *.kpf
 /.idea/
 /web/uploads/
