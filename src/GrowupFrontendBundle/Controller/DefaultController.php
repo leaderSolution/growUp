@@ -3,6 +3,7 @@
 namespace GrowupFrontendBundle\Controller;
 
 use GrowupFrontendBundle\Form\IdeaType;
+use GrowupFrontendBundle\Form\IdentityPictureType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 use GrowupFrontendBundle\Entity\Idea;
@@ -15,6 +16,7 @@ use Symfony\Component\Form\FormBuilder;
 use Symfony\Component\HttpFoundation\Request;
 use Ivory\CKEditorBundle\Form\Type\CKEditorType;
 use GrowupFrontendBundle\Repository\IdeaRepository;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 class DefaultController extends Controller
 {
@@ -55,20 +57,46 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/photo",name="upload_user_photo")
+     * @Route("/photo/new",name="new_pic")
      */
 
-    public function userUploadPhoto(Request $request,User $user){
-        $user=$this->getUser();
-        $form = $this->createForm(IdeaType::class,$user);
-        if ($form->isValid()) {
-            $file = $user->getProfilImage();
-            $fileName = $this->get('app.images_uploader')->upload($file);
+    public function userUploadPhoto(Request $request){
+        $candidate= $this->getUser();
 
-            $user->setProfilImage($fileName);
+        $form = $this->createForm(IdentityPictureType::class,$candidate);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+
+
+            /** @var \UploadedFile $file */
+            $file = $candidate->getProfilImage();
+
+
+
+
+            // Generate a unique name for the file before saving it
+            /** @var TYPE_NAME $fileName */
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+
+            $file->move(
+                $this->container->getParameter('kernel.root_dir') . '/../web/uploads/pictures/',
+                $fileName
+            );
+
+            $candidate->setProfilImage($fileName);
+            $em= $this->getDoctrine()->getEntityManager();
+            $em->persist($candidate);
+            $em->flush();
+
+            $this->redirect ($request->server->get ('HTTP_REFERER'));
+
 
         }
-        return $this->redirect ($request->server->get ('HTTP_REFERER'));
+
+        return $this->render('GrowupFrontendBundle:Candidate:_upload.html.twig',
+           array('form' => $form->createView(),
+
+            ));
 
     }
     

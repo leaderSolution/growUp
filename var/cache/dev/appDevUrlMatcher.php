@@ -122,32 +122,35 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'GrowupFrontendBundle\\Controller\\DefaultController::indexAction',  '_route' => 'home_page',);
         }
 
-        if (0 === strpos($pathinfo, '/profile')) {
+        if (0 === strpos($pathinfo, '/p')) {
             // candidate_profile
             if ($pathinfo === '/profile') {
                 return array (  '_controller' => 'GrowupFrontendBundle\\Controller\\DefaultController::profileAction',  '_route' => 'candidate_profile',);
             }
 
-            // pic_new
-            if ($pathinfo === '/profile/photo/new') {
-                return array (  '_controller' => 'GrowupFrontendBundle\\Controller\\DefaultController::uploadPicAction',  '_route' => 'pic_new',);
+            // new_pic
+            if ($pathinfo === '/photo/new') {
+                return array (  '_controller' => 'GrowupFrontendBundle\\Controller\\DefaultController::userUploadPhoto',  '_route' => 'new_pic',);
             }
 
-            // new_idea
-            if ($pathinfo === '/profile/new') {
-                return array (  '_controller' => 'GrowupFrontendBundle\\Controller\\IdeaController::newIdeaAction',  '_route' => 'new_idea',);
-            }
-
-            // idea_delete
-            if (preg_match('#^/profile/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                    $allow = array_merge($allow, array('GET', 'HEAD'));
-                    goto not_idea_delete;
+            if (0 === strpos($pathinfo, '/profile')) {
+                // new_idea
+                if ($pathinfo === '/profile/new') {
+                    return array (  '_controller' => 'GrowupFrontendBundle\\Controller\\IdeaController::newIdeaAction',  '_route' => 'new_idea',);
                 }
 
-                return $this->mergeDefaults(array_replace($matches, array('_route' => 'idea_delete')), array (  '_controller' => 'GrowupFrontendBundle\\Controller\\IdeaController::deleteAction',));
+                // idea_delete
+                if (preg_match('#^/profile/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
+                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
+                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                        goto not_idea_delete;
+                    }
+
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'idea_delete')), array (  '_controller' => 'GrowupFrontendBundle\\Controller\\IdeaController::deleteAction',));
+                }
+                not_idea_delete:
+
             }
-            not_idea_delete:
 
         }
 
