@@ -1,16 +1,6 @@
 /web/bundles/
 /web/css/
 /web/js/
-/app/bootstrap.php.cache
-/app/cache/*
 /app/config/parameters.yml
 /app/logs/*
-/build/
-/vendor/
 
-*.kpf
-/.idea/
-/web/uploads/
-/app/spool/
-docker-compose.yml
-.DS_Store
