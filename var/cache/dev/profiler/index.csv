@@ -29,3 +29,8 @@ df00a3,127.0.0.1,GET,http://localhost:8000/profile/new,1467171436,7e275e,200
 7e275e,127.0.0.1,GET,http://localhost:8000/profile/new,1467171436,,500
 b9996b,127.0.0.1,GET,http://localhost:8000/profile/new,1467171444,461a43,200
 461a43,127.0.0.1,GET,http://localhost:8000/profile/new,1467171444,,500
+59caa7,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DGrowupFrontendBundle%253AIdea%253Aedit,1467172159,d9797d,200
+0114b5,127.0.0.1,GET,http://localhost:8000/_fragment?_path=_format%3Dhtml%26_locale%3Den%26_controller%3DGrowupFrontendBundle%253AIdea%253Aedit,1467172159,d9797d,200
+d9797d,127.0.0.1,GET,http://localhost:8000/profile,1467172159,,200
+da04c0,127.0.0.1,GET,http://localhost:8000/uploads/pictures/a4dfd79ea50490aebb34ddd682165f5b.jpeg,1467172160,bd0182,200
+bd0182,127.0.0.1,GET,http://localhost:8000/uploads/pictures/a4dfd79ea50490aebb34ddd682165f5b.jpeg,1467172160,,404
