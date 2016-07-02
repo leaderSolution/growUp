@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "4cd244bbb1baf9f2f8006b976e4df94d",
+    "hash": "58fb085d277158156f90f574b2c10f0e",
     "content-hash": "9dd03eabb76a0532f0d1df20ad16e836",
     "packages": [
         {
@@ -1980,16 +1980,16 @@
         },
         {
             "name": "symfony/symfony",
-            "version": "v3.0.7",
+            "version": "v3.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/symfony.git",
-                "reference": "272ab3327c3d311aaa9f634730162ea00e9d9e93"
+                "reference": "814b8cdd556bc833f56f5d488534e17eec369337"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/symfony/zipball/272ab3327c3d311aaa9f634730162ea00e9d9e93",
-                "reference": "272ab3327c3d311aaa9f634730162ea00e9d9e93",
+                "url": "https://api.github.com/repos/symfony/symfony/zipball/814b8cdd556bc833f56f5d488534e17eec369337",
+                "reference": "814b8cdd556bc833f56f5d488534e17eec369337",
                 "shasum": ""
             },
             "require": {
@@ -2057,7 +2057,7 @@
                 "doctrine/dbal": "~2.4",
                 "doctrine/doctrine-bundle": "~1.4",
                 "doctrine/orm": "~2.4,>=2.4.5",
-                "egulias/email-validator": "~1.2",
+                "egulias/email-validator": "~1.2,>=1.2.1",
                 "monolog/monolog": "~1.11",
                 "ocramius/proxy-manager": "~0.4|~1.0|~2.0",
                 "phpdocumentor/reflection": "^1.0.7",
@@ -2106,7 +2106,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2016-06-06 16:52:46"
+            "time": "2016-06-30 16:30:29"
         },
         {
             "name": "twbs/bootstrap",
@@ -2276,16 +2276,16 @@
         },
         {
             "name": "symfony/phpunit-bridge",
-            "version": "v3.1.1",
+            "version": "v3.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/phpunit-bridge.git",
-                "reference": "f5e7cdc9b5cd3f7d9b0228692cd6ec5736c3b074"
+                "reference": "eeb3bf9a195df7552fdda46f4724a9442d157413"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/f5e7cdc9b5cd3f7d9b0228692cd6ec5736c3b074",
-                "reference": "f5e7cdc9b5cd3f7d9b0228692cd6ec5736c3b074",
+                "url": "https://api.github.com/repos/symfony/phpunit-bridge/zipball/eeb3bf9a195df7552fdda46f4724a9442d157413",
+                "reference": "eeb3bf9a195df7552fdda46f4724a9442d157413",
                 "shasum": ""
             },
             "require": {
@@ -2327,7 +2327,7 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2016-04-12 18:27:47"
+            "time": "2016-06-29 05:42:25"
         }
     ],
     "aliases": [],
