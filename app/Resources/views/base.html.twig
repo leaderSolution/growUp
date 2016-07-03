@@ -31,6 +31,7 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
 </head>
 <body id="page-top">
 <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
@@ -62,25 +63,25 @@
                     <a class="page-scroll" href="#contact">Services</a>
                 </li>
                 <li class="dropdown">
-                        <a >
+                    <a >
 
-                            <span class="caret"></span>
-                        </a>
+                        <span class="caret"></span>
+                    </a>
                     {% if is_granted("ROLE_USER") and app.user  is defined  %}
-                       <li class="dropdown"> <a href="" class="dropdown-toggle"  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> {{ app.user.username }}</a>
+                <li class="dropdown"> <a href="" class="dropdown-toggle"  id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> {{ app.user.username }}</a>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                         <li><a href="{{ path('candidate_profile') }}">My profile</a> </li>
 
-                      <li><a href="{{ path('fos_user_security_logout') }}">Logout</a> </li>
+                        <li><a href="{{ path('fos_user_security_logout') }}">Logout</a> </li>
 
                     </ul>
-                    </li>
-                    {% else %}
-                        <li><a class="page-scroll fa fa-user fa-2x" href="{{ path("fos_user_security_login") }}">Login</a></li>
-                    {% endif %}
-
                 </li>
+                {% else %}
+                    <li><a class="page-scroll fa fa-user fa-2x" href="{{ path("fos_user_security_login") }}">Login</a></li>
+                {% endif %}
+
+
             </ul>
         </div>
         <!-- /.navbar-collapse -->
@@ -92,12 +93,30 @@
 </nav>
 {% block profile %}{% endblock %}
 {% block home %}{% endblock %}
+{% block body %}{% endblock %}
+
+
 <!-- jQuery -->
+
 <script src="{{ asset ('bundles/growupfrontend/js/jquery.js') }}"></script> <!-- Jquery -->
 
 
 <!-- Bootstrap Core JavaScript -->
-<script src="{{ asset ('bundles/growupfrontend/js/bootstrap.min.js') }}"></script>
+
+<script src="{{ asset ('bundles/growupfrontend/js/dropdown.js') }}"></script>
+<script src="{{ asset ('bundles/growupfrontend/js/affix.js') }}"></script>
+<script src="{{ asset ('bundles/growupfrontend/js/button.js') }}"></script>
+<script src="{{ asset ('bundles/growupfrontend/js/alert.js') }}"></script>
+<script src="{{ asset ('bundles/growupfrontend/js/collapse.js') }}"></script>
+<script src="{{ asset ('bundles/growupfrontend/js/modal.js') }}"></script>
+<script src="{{ asset ('bundles/growupfrontend/js/popover.js') }}"></script>
+<script src="{{ asset ('bundles/growupfrontend/js/scrollspy.js') }}"></script>
+
+<script src="{{ asset ('bundles/growupfrontend/js/tab.js') }}"></script>
+<script src="{{ asset ('bundles/growupfrontend/js/tooltip.js') }}"></script>
+<script src="{{ asset ('bundles/growupfrontend/js/transition.js') }}"></script>
+
+
 
 <!-- Plugin JavaScript -->
 <script src="{{ asset ('bundles/growupfrontend/js/jquery.easing.min.js') }}"></script>
@@ -105,15 +124,12 @@
 <script src="{{ asset ('bundles/growupfrontend/js/wow.min.js') }}"></script>
 
 <!-- Custom Theme JavaScript -->
+<script src="{{ asset('bundles/growupfrontend/js/ajax_front.js') }}"></script>
+<script src="{{ asset('bundles/growupfrontend/js/bootbox.min.js') }}"></script>
 <script src="{{ asset ('bundles/growupfrontend/js/creative.js') }}"></script>
 <script src="{{ asset ('bundles/growupfrontend/js/profile.js') }}"></script>
-<link href="{{ asset ('bundles/growupfrontend/css/editor.css') }}"type="text/css" rel="stylesheet"/>
-<script src="{{ asset ('bundles/growupfrontend/js/editor.js') }}"></script>
-<script type="text/javascript">
-    $(document).ready( function() {
-        $("#txtEditor").Editor();
-    });
-</script>
+
+
 
 </body>
 

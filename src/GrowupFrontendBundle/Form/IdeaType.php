@@ -37,7 +37,7 @@ class IdeaType extends AbstractType
                  'class'   => 'form-control',
              ),
                  'config' => array(
-                     'uiColor' => '#ffffff',
+                    // 'uiColor' => '#ffffff',
                      //...
                  ),));
 

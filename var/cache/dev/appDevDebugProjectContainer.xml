@@ -493,6 +493,7 @@
       <tag name="form.type" alias="app_user_registration"/>
     </service>
     <service id="app.images_uploader" class="GrowupFrontendBundle\Services\FileUploader"/>
+    <service id="app.form.error.messages" class="GrowupFrontendBundle\FormErrorMessages\FormErrorMessages"/>
     <service id="controller_name_converter" class="Symfony\Bundle\FrameworkBundle\Controller\ControllerNameParser" public="false">
       <tag name="monolog.logger" channel="request"/>
       <argument type="service" id="kernel"/>
@@ -2015,7 +2016,7 @@
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
-            <argument>57773ad96fe655.29561623</argument>
+            <argument>57793dcd1ce530.67044623</argument>
           </service>
         </argument>
       </argument>
@@ -2307,7 +2308,7 @@
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.token_storage"/>
-            <argument>57773ad96fe655.29561623</argument>
+            <argument>57793dcd1ce530.67044623</argument>
             <argument type="service" id="monolog.logger.security" on-invalid="null"/>
             <argument type="service" id="security.authentication.manager"/>
           </service>

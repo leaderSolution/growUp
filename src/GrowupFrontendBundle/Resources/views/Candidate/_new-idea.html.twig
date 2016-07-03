@@ -1,5 +1,5 @@
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -10,22 +10,22 @@
             {{ form_start(form, {'method': 'post', 'action': path('new_idea'),'attr': {'class': 'form-goup'}}) }}
 
             <div class="modal-body">
-<div class="form-group">
-    {{ form_label(form.title) }}
-    {{ form_widget(form.title) }}
-
-</div>
-<div class="form-group">
-    {{ form_label(form.shortDescription) }}
-    {{ form_widget(form.shortDescription) }}
-
-</div>
                 <div class="form-group">
-    {{ form_label(form.elaborateDescription) }}
+                    {{ form_label(form.title) }}
+                    {{ form_widget(form.title) }}
 
-        {{ form_widget(form.elaborateDescription) }}
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.shortDescription) }}
+                    {{ form_widget(form.shortDescription) }}
 
-</div>
+                </div>
+                <div class="form-group">
+                    {{ form_label(form.elaborateDescription) }}
+
+                    {{ form_widget(form.elaborateDescription) }}
+
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -34,4 +34,5 @@
             {{ form_end(form) }}
         </div>
 
-    </div></div>
+    </div>
+</div>

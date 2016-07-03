@@ -15,12 +15,12 @@ class __TwigTemplate_0b402368f6fde601e5d0da4542c763da728fc1931debc4d2c1041fa5050
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $__internal_740abe7420a7c3e5e7acca8e3949b9ad8765c942826a772790b11cc119c928f3 = $this->env->getExtension("native_profiler");
-        $__internal_740abe7420a7c3e5e7acca8e3949b9ad8765c942826a772790b11cc119c928f3->enter($__internal_740abe7420a7c3e5e7acca8e3949b9ad8765c942826a772790b11cc119c928f3_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "GrowupFrontendBundle:Candidate:_new-idea.html.twig"));
+        $__internal_53c9141f4e8f2de733e3bce995122a4abc8b23bf0ca117e6ab8ae55fbc99915b = $this->env->getExtension("native_profiler");
+        $__internal_53c9141f4e8f2de733e3bce995122a4abc8b23bf0ca117e6ab8ae55fbc99915b->enter($__internal_53c9141f4e8f2de733e3bce995122a4abc8b23bf0ca117e6ab8ae55fbc99915b_prof = new Twig_Profiler_Profile($this->getTemplateName(), "template", "GrowupFrontendBundle:Candidate:_new-idea.html.twig"));
 
         // line 1
         echo "<div class=\"modal fade\" id=\"myModal\" tabindex=\"-1\" role=\"dialog\" aria-labelledby=\"myModalLabel\" aria-hidden=\"true\">
-    <div class=\"modal-dialog\" role=\"document\">
+    <div class=\"modal-dialog modal-lg\" role=\"document\">
         <div class=\"modal-content\">
             <div class=\"modal-header\">
                 <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\">
@@ -34,40 +34,40 @@ class __TwigTemplate_0b402368f6fde601e5d0da4542c763da728fc1931debc4d2c1041fa5050
         echo "
 
             <div class=\"modal-body\">
-<div class=\"form-group\">
-    ";
+                <div class=\"form-group\">
+                    ";
         // line 14
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "title", array()), 'label');
         echo "
-    ";
+                    ";
         // line 15
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "title", array()), 'widget');
         echo "
 
-</div>
-<div class=\"form-group\">
-    ";
+                </div>
+                <div class=\"form-group\">
+                    ";
         // line 19
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "shortDescription", array()), 'label');
         echo "
-    ";
+                    ";
         // line 20
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "shortDescription", array()), 'widget');
         echo "
 
-</div>
+                </div>
                 <div class=\"form-group\">
-    ";
+                    ";
         // line 24
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "elaborateDescription", array()), 'label');
         echo "
 
-        ";
+                    ";
         // line 26
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "elaborateDescription", array()), 'widget');
         echo "
 
-</div>
+                </div>
             </div>
             <div class=\"modal-footer\">
                 <button type=\"button\" class=\"btn btn-secondary\" data-dismiss=\"modal\">Close</button>
@@ -79,9 +79,10 @@ class __TwigTemplate_0b402368f6fde601e5d0da4542c763da728fc1931debc4d2c1041fa5050
         echo "
         </div>
 
-    </div></div>";
+    </div>
+</div>";
         
-        $__internal_740abe7420a7c3e5e7acca8e3949b9ad8765c942826a772790b11cc119c928f3->leave($__internal_740abe7420a7c3e5e7acca8e3949b9ad8765c942826a772790b11cc119c928f3_prof);
+        $__internal_53c9141f4e8f2de733e3bce995122a4abc8b23bf0ca117e6ab8ae55fbc99915b->leave($__internal_53c9141f4e8f2de733e3bce995122a4abc8b23bf0ca117e6ab8ae55fbc99915b_prof);
 
     }
 
@@ -101,7 +102,7 @@ class __TwigTemplate_0b402368f6fde601e5d0da4542c763da728fc1931debc4d2c1041fa5050
     }
 }
 /* <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">*/
-/*     <div class="modal-dialog" role="document">*/
+/*     <div class="modal-dialog modal-lg" role="document">*/
 /*         <div class="modal-content">*/
 /*             <div class="modal-header">*/
 /*                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">*/
@@ -112,22 +113,22 @@ class __TwigTemplate_0b402368f6fde601e5d0da4542c763da728fc1931debc4d2c1041fa5050
 /*             {{ form_start(form, {'method': 'post', 'action': path('new_idea'),'attr': {'class': 'form-goup'}}) }}*/
 /* */
 /*             <div class="modal-body">*/
-/* <div class="form-group">*/
-/*     {{ form_label(form.title) }}*/
-/*     {{ form_widget(form.title) }}*/
-/* */
-/* </div>*/
-/* <div class="form-group">*/
-/*     {{ form_label(form.shortDescription) }}*/
-/*     {{ form_widget(form.shortDescription) }}*/
-/* */
-/* </div>*/
 /*                 <div class="form-group">*/
-/*     {{ form_label(form.elaborateDescription) }}*/
+/*                     {{ form_label(form.title) }}*/
+/*                     {{ form_widget(form.title) }}*/
 /* */
-/*         {{ form_widget(form.elaborateDescription) }}*/
+/*                 </div>*/
+/*                 <div class="form-group">*/
+/*                     {{ form_label(form.shortDescription) }}*/
+/*                     {{ form_widget(form.shortDescription) }}*/
 /* */
-/* </div>*/
+/*                 </div>*/
+/*                 <div class="form-group">*/
+/*                     {{ form_label(form.elaborateDescription) }}*/
+/* */
+/*                     {{ form_widget(form.elaborateDescription) }}*/
+/* */
+/*                 </div>*/
 /*             </div>*/
 /*             <div class="modal-footer">*/
 /*                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>*/
@@ -136,4 +137,5 @@ class __TwigTemplate_0b402368f6fde601e5d0da4542c763da728fc1931debc4d2c1041fa5050
 /*             {{ form_end(form) }}*/
 /*         </div>*/
 /* */
-/*     </div></div>*/
+/*     </div>*/
+/* </div>*/

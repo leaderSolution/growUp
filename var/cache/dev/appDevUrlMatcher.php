@@ -141,8 +141,8 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
                 // idea_delete
                 if (preg_match('#^/profile/(?P<id>[^/]++)$#s', $pathinfo, $matches)) {
-                    if (!in_array($this->context->getMethod(), array('GET', 'HEAD'))) {
-                        $allow = array_merge($allow, array('GET', 'HEAD'));
+                    if ($this->context->getMethod() != 'POST') {
+                        $allow[] = 'POST';
                         goto not_idea_delete;
                     }
 
@@ -162,6 +162,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
         // idea_show
         if (preg_match('#^/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'idea_show')), array (  '_controller' => 'GrowupFrontendBundle\\Controller\\IdeaController::showAction',));
+        }
+
+        // idea_edit_ajax
+        if (0 === strpos($pathinfo, '/ajax') && preg_match('#^/ajax/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+            return $this->mergeDefaults(array_replace($matches, array('_route' => 'idea_edit_ajax')), array (  '_controller' => 'GrowupFrontendBundle\\Controller\\IdeaController::modifiertAjaxAction',));
         }
 
         // homepage

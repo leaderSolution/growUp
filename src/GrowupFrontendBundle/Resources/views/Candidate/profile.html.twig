@@ -1,7 +1,7 @@
 {% extends 'GrowupFrontendBundle::base.html.twig' %}
 
 {% block profile %}
-<hr>
+    <hr>
     <br>
     <br>
     <br>
@@ -11,188 +11,284 @@
             <input type="file" name="avatar" id="avatarUpload" accept="images/*" class="hidden" data-url="{{ path('backend_upload_user_avatar') }}" />
         </li>#}
 
-<div class="container">
-    <div class="row">
-        <div class="col-sm-10"><a href="#" class="pull-left">
-                {% image '@GrowupFrontendBundle/Resources/public/images/default_profile.jpg' %}
-                <img src="{% if candidate.profilImage %}{{ asset('uploads/pictures/' ~ candidate.profilImage) }}{% else %}/bundles/growupfrontend/images/default_profile.jpg {% endif %}" alt="Example" class="img-circle img-responsive" width="150px" height="150px"/>
-                {% endimage %}</a>
+    <div class="container">
+        <div class="row">
+            <div class="row">
+                <div class="col-sm-10">
+                    <a href="{{ path('new_pic', {'id': candidate.id }) }}" class="pull-left" data-toggle="modal"
+                       data-target="#Modal">
+                        {% image '@GrowupFrontendBundle/Resources/public/images/default_profile.jpg' %}
+                        <img src="{% if candidate.profilImage %}{{ candidate.profilImage }}" alt="Example"
+                             class="img-circle img-responsive" width="150px" height="150px">
+                    {% else %}/bundles/growupfrontend/images/default_profile.jpg {% endif %}"
+                        alt="Example" class="img-circle img-responsive" width="150px" height="150px"/>
+                        {% endimage %}
 
-        </div>
-        <div class="col-sm-10 center-block"><h3>{{ candidate.username }}</h3></div>
+                    </a>
 
-
-
-    </div>
-    <div class="row">
-        <div class="col-sm-3"><!--left col-->
-
-            <ul class="list-group">
-                <li class="list-group-item text-muted">Profile</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Joined</strong></span> {{ candidate.createdAt| date }}</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Last seen</strong></span> {{ candidate.lastLogin| date }}</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Real name</strong></span> {{ candidate.firstName}}  {{ candidate.lastName}}</li>
-
-            </ul>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">Documents <i class="fa fa-link fa-1x"></i></div>
-                <div class="panel-body"><a href="http://bootply.com">bootply.com</a></div>
-            </div>
+                    {% include 'GrowupFrontendBundle:Candidate:_upload.html.twig' %}
 
 
-            <ul class="list-group">
-                <li class="list-group-item text-muted">Education <i class="glyphicon glyphicon-education"></i></li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Specialty</strong></span> {{ candidate.specialty }}</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Last degree</strong></span> {{ candidate.lastDegree }}</li>
-                <li class="list-group-item text-right"><span class="pull-left"><strong>Skills</strong></span> hh</li>
-            </ul>
-
-            <div class="panel panel-default">
-                <div class="panel-heading">Social Media</div>
-                <div class="panel-body">
-                    <a href="{{ candidate.facebook }}"><i class="fa fa-facebook fa-2x" style="color: #2b669a"></i></a>
-                    <a href="{{ candidate.github }}"><i class="fa fa-github fa-2x" style="color: #0f0f0f"></i> </a>
-                    <a href="{{ candidate.twitter }}"><i class="fa fa-twitter fa-2x" style="color: #00CCFF"></i> </a>
-
-                    <a href="{{ candidate.googlePlus }}"><i class="fa fa-google-plus fa-2x" style="color: #b94441"></i></a>
                 </div>
+                <div class="col-sm-10 center-block"><h3>{{ candidate.username }}</h3></div>
+
+
             </div>
-
-        </div><!--/col-3-->
-        <div class="col-sm-9">
-
-            <ul class="nav nav-tabs" id="myTab">
-                <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-                <li><a href="#messages" data-toggle="tab">Messages</a></li>
-                <li><a href="#settings" data-toggle="tab">Settings</a></li>
-            </ul>
-
-            <div class="tab-content">
-                <div class="tab-pane active" id="home">
-                    <!--/table-resp-->
-                    <br>
-                   {# <button class="btn btn-success glyphicon glyphicon-plus pull-right"data-toggle="modal" data-target="#myModal"> Add new Idea</button>#}
-
-                        <a data-target="#myModal" data-toggle="modal" href="{{ path('new_idea') }}" data-title="Add new idea" class="btn btn-success pull-right">
-                            Add New <i class="fa fa-plus p-r-10"></i>
-                        </a>
-                          {% include 'GrowupFrontendBundle:Candidate:_new-idea.html.twig'  %}
-
-
-
-                    <hr>
-
-                    <h4>My Ideas</h4>
-
-                    <div class="table-responsive">
-                        <table class="table table-hover">
-
-                            <tbody>
-                            {% for idea in ideas %}
-                            <tr>
-                                <td>
-                                    <a data-target="#editModal" data-toggle="modal" href="{{ path('edit_idea', {'id':idea.id }) }}" ><i class="pull-right fa fa-edit" style="color: #00b3ee"></i></a>
-                                    {{ render (controller('GrowupFrontendBundle:Idea:edit', { id: idea.id })) }}
-
-                                    <a href="{{ path('idea_delete', { 'id': idea.id }) }}"><i class="pull-right fa fa-remove" style="color: #b92c28"></i></a>
-                                    <a href="{{ path('idea_show', { 'id': idea.id }) }}" style=""> {{ idea.title }}</a></td>
-                            </tr>
-                              {% endfor %}
-                            </tbody>
-                        </table>
-
-                    </div>
-                    {% include 'GrowupFrontendBundle:Candidate:_edit-idea.html.twig'  %}
-
-
-                </div><!--/tab-pane-->
-                <div class="tab-pane" id="messages">
-
-                    <h2></h2>
+            <div class="row">
+                <div class="col-sm-3"><!--left col-->
 
                     <ul class="list-group">
-                        <li class="list-group-item text-muted">Inbox</li>
-                        <li class="list-group-item text-right"><a href="#" class="pull-left">Here is your a link to the latest summary report from the..</a> 2.13.2014</li>
+                        <li class="list-group-item text-muted">Profile</li>
+                        <li class="list-group-item text-right"><span
+                                    class="pull-left"><strong>Joined</strong></span> {{ candidate.createdAt| date }}
+                        </li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Last
+                                    seen</strong></span> {{ candidate.lastLogin| date }}</li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Real
+                                    name</strong></span> {{ candidate.firstName }}  {{ candidate.lastName }}</li>
+
                     </ul>
 
-                </div><!--/tab-pane-->
-                <div class="tab-pane" id="settings">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Documents <i class="fa fa-link fa-1x"></i></div>
+                        <div class="panel-body"><a href="http://bootply.com">bootply.com</a></div>
+                    </div>
 
 
-                    <hr>
-                        <div class="form-group">
+                    <ul class="list-group">
+                        <li class="list-group-item text-muted">Education <i class="glyphicon glyphicon-education"></i>
+                        </li>
+                        <li class="list-group-item text-right"><span
+                                    class="pull-left"><strong>Specialty</strong></span> {{ candidate.specialty }}</li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Last
+                                    degree</strong></span> {{ candidate.lastDegree }}</li>
+                        <li class="list-group-item text-right"><span class="pull-left"><strong>Skills</strong></span> hh
+                        </li>
+                    </ul>
 
-                            <div class="col-xs-6">
-                                <label for="first_name"><h4>First name</h4></label>
-                                <input type="text" class="form-control" name="first_name" id="first_name" placeholder="first name" title="enter your first name if any.">
-                            </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Social Media</div>
+                        <div class="panel-body">
+                            <a href="{{ candidate.facebook }}" target="_blank"><i class="fa fa-facebook fa-2x"
+                                                                                  style="color: #2b669a"></i></a>
+                            <a href="{{ candidate.github }}" target="_blank"><i class="fa fa-github fa-2x"
+                                                                                style="color: #0f0f0f"></i>
+                            </a>
+                            <a href="{{ candidate.twitter }}" target="_blank"><i class="fa fa-twitter fa-2x"
+                                                                                 style="color: #00CCFF"></i>
+                            </a>
+
+                            <a href="{{ candidate.googlePlus }}" target="_blank"><i class="fa fa-google-plus fa-2x"
+                                                                                    style="color: #b94441"></i></a>
                         </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="last_name"><h4>Last name</h4></label>
-                                <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name" title="enter your last name if any.">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="phone"><h4>Phone</h4></label>
-                                <input type="text" class="form-control" name="phone" id="phone" placeholder="enter phone" title="enter your phone number if any.">
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-xs-6">
-                                <label for="mobile"><h4>Mobile</h4></label>
-                                <input type="text" class="form-control" name="mobile" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any.">
-                            </div>
-                        </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="email"><h4>Email</h4></label>
-                                <input type="email" class="form-control" name="email" id="email" placeholder="you@email.com" title="enter your email.">
-                            </div>
-                        </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="email"><h4>Location</h4></label>
-                                <input type="email" class="form-control" id="location" placeholder="somewhere" title="enter a location">
-                            </div>
-                        </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="password"><h4>Password</h4></label>
-                                <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password.">
-                            </div>
-                        </div>
-                        <div class="form-group">
-
-                            <div class="col-xs-6">
-                                <label for="password2"><h4>Verify</h4></label>
-                                <input type="password" class="form-control" name="password2" id="password2" placeholder="password2" title="enter your password2.">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <div class="col-xs-12">
-                                <br>
-                                <button class="btn  btn-success" type="submit"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                                <button class="btn " type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
-                            </div>
-                        </div>
-
+                    </div>
 
                 </div>
+                <!--/col-3-->
+                <div class="col-sm-9">
 
-            </div><!--/tab-pane-->
-        </div><!--/tab-content-->
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
+                        <li><a href="#messages" data-toggle="tab">Messages</a></li>
+                        <li><a href="#settings" data-toggle="tab">Settings</a></li>
+                    </ul>
 
-    </div><!--/col-9-->
-</div><!--/row-->
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="home">
+                            <!--/table-resp-->
+                            <br>
+                            {# <button class="btn btn-success glyphicon glyphicon-plus pull-right"data-toggle="modal" data-target="#myModal"> Add new Idea</button>#}
 
+                            <a data-target="#myModal" data-toggle="modal" href="{{ path('new_idea') }}"
+                               data-title="Add new idea" class="btn btn-success pull-right">
+                                Add New <i class="fa fa-plus p-r-10"></i>
+                            </a>
+                            {% include 'GrowupFrontendBundle:Candidate:_new-idea.html.twig' %}
+
+
+
+                            <hr>
+
+                            <h4>My Ideas</h4>
+
+
+                            <div class="modal fade" id="editModal" role="dialog" tabindex="-1"
+                                 aria-labelledby="demo-default-modal" aria-hidden="true">
+
+                            </div>
+                            <div id="divLoading"></div>
+
+                            <div class="table-responsive" id="madiv">
+                                <table class="table table-hover">
+
+                                    <tbody>
+                                    {% for idea in ideas %}
+                                        <tr id="row-to-hide-{{ idea.id }}">
+                                            <td class="center">
+
+                                                <a href="{{ path('idea_edit_ajax', {'id':idea.id }) }}" data-remote="false"
+                                                   data-toggle="modal"
+                                                   data-target="#editModal"
+                                                   data-entity-id="{{ idea.id }}">
+                                                    <i class="pull-right fa fa-edit"
+                                                       style="color: #00b3ee"></i>
+                                                    {#{{ render (controller('GrowupFrontendBundle:Idea:edit', { id: idea.id })) }}#}
+
+                                                </a>
+                                                {#{% include 'GrowupFrontendBundle:Candidate:_edit-idea.html.twig' %}#}
+
+
+                                                <a href="{{ path('idea_delete', { 'id': idea.id }) }}"
+                                                   data-entity-id="{{ idea.id }}"
+                                                   class="remove_item"><i class="pull-right fa fa-remove"
+                                                                          style="color: #b92c28"></i></a>
+
+                                                &nbsp;&nbsp;&nbsp;
+
+                                                <a href="{{ path('idea_show', { 'id': idea.id }) }}"
+                                                   style=""> {{ idea.title }}</a>
+
+                                                <div class="visible-xs visible-sm hidden-md hidden-lg">
+                                                    <div class="btn-group" dropdown>
+                                                        <button type="button"
+                                                                class="btn btn-primary btn-o btn-sm dropdown-toggle"
+                                                                dropdown-toggle>
+                                                            <i class="fa fa-cog"></i>&nbsp;<span
+                                                                    class="caret"></span>
+                                                        </button>
+                                                        <ul class="dropdown-menu pull-right dropdown-light"
+                                                            role="menu">
+                                                            <li>
+                                                                <a href="{{ path('edit_idea', {'id': idea.id} ) }}">
+
+                                                                </a>
+
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+
+
+                                                </div>
+
+                                            </td>
+
+                                        </tr>
+
+                                    {% endfor %}
+
+                                    </tbody>
+                                </table>
+
+                            </div>
+
+
+                        </div>
+                        <!--/tab-pane-->
+                        <div class="tab-pane" id="messages">
+
+                            <h2></h2>
+
+                            <ul class="list-group">
+                                <li class="list-group-item text-muted">Inbox</li>
+                                <li class="list-group-item text-right"><a href="#" class="pull-left">Here is your a link
+                                        to
+                                        the latest summary report from the..</a> 2.13.2014
+                                </li>
+                            </ul>
+
+                        </div>
+                        <!--/tab-pane-->
+                        <div class="tab-pane" id="settings">
+
+
+                            <hr>
+                            <div class="form-group">
+
+                                <div class="col-xs-6">
+                                    <label for="first_name"><h4>First name</h4></label>
+                                    <input type="text" class="form-control" name="first_name" id="first_name"
+                                           placeholder="first name" title="enter your first name if any.">
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <div class="col-xs-6">
+                                    <label for="last_name"><h4>Last name</h4></label>
+                                    <input type="text" class="form-control" name="last_name" id="last_name"
+                                           placeholder="last name" title="enter your last name if any.">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+
+                                <div class="col-xs-6">
+                                    <label for="phone"><h4>Phone</h4></label>
+                                    <input type="text" class="form-control" name="phone" id="phone"
+                                           placeholder="enter phone" title="enter your phone number if any.">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-xs-6">
+                                    <label for="mobile"><h4>Mobile</h4></label>
+                                    <input type="text" class="form-control" name="mobile" id="mobile"
+                                           placeholder="enter mobile number" title="enter your mobile number if any.">
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <div class="col-xs-6">
+                                    <label for="email"><h4>Email</h4></label>
+                                    <input type="email" class="form-control" name="email" id="email"
+                                           placeholder="you@email.com" title="enter your email.">
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <div class="col-xs-6">
+                                    <label for="email"><h4>Location</h4></label>
+                                    <input type="email" class="form-control" id="location" placeholder="somewhere"
+                                           title="enter a location">
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <div class="col-xs-6">
+                                    <label for="password"><h4>Password</h4></label>
+                                    <input type="password" class="form-control" name="password" id="password"
+                                           placeholder="password" title="enter your password.">
+                                </div>
+                            </div>
+                            <div class="form-group">
+
+                                <div class="col-xs-6">
+                                    <label for="password2"><h4>Verify</h4></label>
+                                    <input type="password" class="form-control" name="password2" id="password2"
+                                           placeholder="password2" title="enter your password2.">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-xs-12">
+                                    <br>
+                                    <button class="btn  btn-success" type="submit"><i
+                                                class="glyphicon glyphicon-ok-sign"></i> Save
+                                    </button>
+                                    <button class="btn " type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset
+                                    </button>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <!--/tab-pane-->
+                </div>
+                <!--/tab-content-->
+
+            </div>
+            <!--/col-9-->
+        </div>
+        <!--/row-->
+    </div>
 {% endblock %}

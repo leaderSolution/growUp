@@ -12,3 +12,6 @@ services:
 
     app.images_uploader:
         class: GrowupFrontendBundle\Services\FileUploader
+
+    app.form.error.messages:
+        class: GrowupFrontendBundle\FormErrorMessages\FormErrorMessages
